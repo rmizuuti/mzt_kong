@@ -1,4 +1,10 @@
-venv
+venv/
 venv/*
-.idea
+.idea/
 .idea/*
+build/
+build/*
+dist/
+dist/*
+mzt_kong.egg-info/
+mzt_kong.egg-info/*

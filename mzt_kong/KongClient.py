@@ -1,4 +1,4 @@
-from HTTPUtils import *
+from mzt_http_utils.HTTPUtils import *
 
 
 class KongClient:
