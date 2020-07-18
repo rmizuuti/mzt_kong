@@ -6,8 +6,15 @@ class KongClient:
     def __init__(self, server, port=8001):
         if server is None or server == '':
             raise KongException('Server cannot be empty')
-        self.server = server + ':' + str(port)
+        self.server = '{}:{}'.format(server, str(port))
         self.http = HTTPUtils()
+
+    def get_users(self):
+        req = RequestArgs()
+        req.method = HTTPMethod.GET
+        req.url = self.server + '/consumers'
+        response = json.loads(self.http.execute(req))
+        return response
 
     def create_user(self, username: str, custom_id: str):
         if username is None or username == '':
